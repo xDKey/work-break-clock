@@ -46,6 +46,10 @@ const Timer = ({ timerLabel, time, clearAll }) => {
     return () => clearInterval(intervalId);
   });
 
+  useEffect(() => {
+    setTimeLeft(time.split(':'))
+  }, [time])
+
   const computateTime = () => {
     const [min, sec] = timeLeft;
 
@@ -71,10 +75,10 @@ const Timer = ({ timerLabel, time, clearAll }) => {
       <TimerLabel id='timer-label'>{timerLabel}</TimerLabel>
       <Time it='time-left'>{timeLeft.join(':')}</Time>
       <Controls>
-        <Button id='start_stop' handleClick={() => setIsRun(!isRun)}>
+        <Button id='start_stop' onClick={() => setIsRun(!isRun)}>
           {isRun ? <FaPause /> : <FaPlay />}
         </Button>
-        <Button id='reset' handleClick={reset}>
+        <Button id='reset' onClick={reset}>
           <FaUndoAlt />
         </Button>
       </Controls>
