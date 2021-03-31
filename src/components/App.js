@@ -46,20 +46,18 @@ const App = () => {
   const [workTime, setWorkTime] = useState(25);
   const [isBreak, setIsBreak] = useState(false);
   const [currentTime, setCurrentTime] = useState(`${workTime}:00`);
-  
+
   const clearAll = () => {
-    setIsBreak(false)
-    setBreakTime(5)
-    setWorkTime(25)
+    setIsBreak(false);
+    setBreakTime(5);
+    setWorkTime(25);
   };
 
   useEffect(() => {
-    if (isBreak) setCurrentTime(breakTime + ':00')
-    if (!isBreak) setCurrentTime(workTime + ':00')
-    console.log('---')
-    console.log(currentTime)
-  }, [isBreak, workTime])
-
+    if (isBreak) setCurrentTime(breakTime + ':00');
+    if (!isBreak) setCurrentTime(workTime + ':00');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isBreak, workTime]);
 
   return (
     <BackgroundTimer>
