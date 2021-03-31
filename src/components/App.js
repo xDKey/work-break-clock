@@ -46,14 +46,20 @@ const App = () => {
   const [workTime, setWorkTime] = useState(25);
   const [isBreak, setIsBreak] = useState(false);
   const [currentTime, setCurrentTime] = useState(`${workTime}:00`);
-  const reset = () => {
+  
+  const clearAll = () => {
+    setIsBreak(false)
     setBreakTime(5)
     setWorkTime(25)
   };
 
   useEffect(() => {
-    setCurrentTime(workTime + ':00')
-  }, [workTime])
+    if (isBreak) setCurrentTime(breakTime + ':00')
+    if (!isBreak) setCurrentTime(workTime + ':00')
+    console.log('---')
+    console.log(currentTime)
+  }, [isBreak, workTime])
+
 
   return (
     <BackgroundTimer>
@@ -62,7 +68,9 @@ const App = () => {
         <Timer
           timerLabel={isBreak ? 'break' : 'work'}
           time={currentTime}
-          clearAll={reset}
+          clearAll={clearAll}
+          setIsBreak={setIsBreak}
+          isBreak={isBreak}
         />
       </TimerWrapper>
       <ControlWrapper>

@@ -32,26 +32,27 @@ const Controls = styled.div`
   margin-top: 5px;
 `;
 
-const Timer = ({ timerLabel, time, clearAll }) => {
+const Timer = ({ timerLabel, time, clearAll, setIsBreak, isBreak }) => {
   const [timeLeft, setTimeLeft] = useState(time.split(':'));
   const [isRun, setIsRun] = useState(false);
 
   useEffect(() => {
     let intervalId;
-
+    
     if (isRun) {
       intervalId = setInterval(computateTime, 1000);
     }
-
+    
     return () => clearInterval(intervalId);
   });
-
+  
   useEffect(() => {
     setTimeLeft(time.split(':'))
-  }, [time])
+  }, [time, isBreak])
 
   const computateTime = () => {
     const [min, sec] = timeLeft;
+    if (+min === 0 && +sec === 0) return setIsBreak(!isBreak)
 
     const computedMin = +sec === 0 ? min - 1 : min;
     const computedSec = +sec > 0 ? sec - 1 : 59;
