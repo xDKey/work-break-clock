@@ -49,7 +49,7 @@ const App = () => {
     <BackgroundTimer>
       <Title>Work + break Clock</Title>
       <TimerWrapper>
-        <Timer timerLabel='Work' time='00:00' reset={reset} />
+        <Timer timerLabel='Work' time='19:09' clearAll={reset} />
       </TimerWrapper>
       <ControlWrapper>
         <Control controlType='break' time='5' />
