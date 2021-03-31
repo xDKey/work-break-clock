@@ -35,7 +35,12 @@ const Controls = styled.div`
   justify-content: space-between;
 `;
 
-const Control = ({ controlType, time }) => {
+const Control = ({ controlType, time, handleSetTime }) => {
+  const handleClick = ({ type }) => {
+    if (type === 'INC') handleSetTime(time + 1)
+    if (type === 'DEC') handleSetTime(time - 1)
+  };
+
   return (
     <StyledTimer>
       <TimerLabel id={controlType + '-label'}>
@@ -43,10 +48,16 @@ const Control = ({ controlType, time }) => {
       </TimerLabel>
       <Time it={controlType + '-length'}>{time}</Time>
       <Controls>
-        <Button id={controlType + '-increment'}>
+        <Button
+          id={controlType + '-increment'}
+          onClick={() => handleClick({ type: 'INC' })}
+        >
           <FaArrowUp />
         </Button>
-        <Button id={controlType + '-decrement'}>
+        <Button
+          id={controlType + '-decrement'}
+          onClick={() => handleClick({ type: 'DEC' })}
+        >
           <FaArrowDown />
         </Button>
       </Controls>

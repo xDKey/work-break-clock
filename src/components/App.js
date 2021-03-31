@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Timer from './Timer';
 import backgroundImage from '../assets/main-background.jpg';
 import Control from './Control';
+import { useEffect, useState } from 'react';
 
 const Title = styled.div`
   font-family: Averia;
@@ -41,19 +42,38 @@ const ControlWrapper = styled.div`
 `;
 
 const App = () => {
-  const reset = () => {
-    console.log('reset');
-  };
+  const [breakTime, setBreakTime] = useState(5);
+  const [workTime, setWorkTime] = useState(25);
+  const [isBreak, setIsBreak] = useState(false);
+  const [currentTime, setCurrentTime] = useState(`${workTime}:00`);
+  const reset = () => {};
+
+  useEffect(() => {
+    if (isBreak) setCurrentTime(breakTime + ':00')
+    if (!isBreak) setCurrentTime(workTime + ':00')
+  }, [breakTime, workTime])
 
   return (
     <BackgroundTimer>
       <Title>Work + break Clock</Title>
       <TimerWrapper>
-        <Timer timerLabel='Work' time='19:09' clearAll={reset} />
+        <Timer
+          timerLabel={isBreak ? 'break' : 'work'}
+          time={currentTime}
+          clearAll={reset}
+        />
       </TimerWrapper>
       <ControlWrapper>
-        <Control controlType='break' time='5' />
-        <Control controlType='work' time='20' />
+        <Control
+          controlType='break'
+          time={breakTime}
+          handleSetTime={setBreakTime}
+        />
+        <Control
+          controlType='work'
+          time={workTime}
+          handleSetTime={setWorkTime}
+        />
       </ControlWrapper>
     </BackgroundTimer>
   );
