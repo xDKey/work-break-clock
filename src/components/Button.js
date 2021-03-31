@@ -10,9 +10,9 @@ const StyledButton = styled.button`
   box-shadow: 1px 1px 2px black;
 `;
 
-const Button = ({id, children, handleClick}) => {
+const Button = ({id, children, onClick}) => {
     return (
-        <StyledButton id={id} onClick={handleClick}>
+        <StyledButton id={id} onClick={onClick}>
             {children}
         </StyledButton>
     )
