@@ -46,12 +46,14 @@ const App = () => {
   const [workTime, setWorkTime] = useState(25);
   const [isBreak, setIsBreak] = useState(false);
   const [currentTime, setCurrentTime] = useState(`${workTime}:00`);
-  const reset = () => {};
+  const reset = () => {
+    setBreakTime(5)
+    setWorkTime(25)
+  };
 
   useEffect(() => {
-    if (isBreak) setCurrentTime(breakTime + ':00')
-    if (!isBreak) setCurrentTime(workTime + ':00')
-  }, [breakTime, workTime])
+    setCurrentTime(workTime + ':00')
+  }, [workTime])
 
   return (
     <BackgroundTimer>
