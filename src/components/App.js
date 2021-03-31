@@ -78,7 +78,7 @@ const App = () => {
           handleSetTime={setBreakTime}
         />
         <Control
-          controlType='work'
+          controlType='session'
           time={workTime}
           handleSetTime={setWorkTime}
         />

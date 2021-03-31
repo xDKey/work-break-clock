@@ -46,7 +46,7 @@ const Control = ({ controlType, time, handleSetTime }) => {
       <TimerLabel id={controlType + '-label'}>
         {controlType === 'break' ? 'Break' : 'Work'}
       </TimerLabel>
-      <Time it={controlType + '-length'}>{time}</Time>
+      <Time id={controlType + '-length'}>{time}</Time>
       <Controls>
         <Button
           id={controlType + '-increment'}

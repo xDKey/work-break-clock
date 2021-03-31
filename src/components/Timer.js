@@ -81,7 +81,7 @@ const Timer = ({ timerLabel, time, clearAll, setIsBreak, isBreak }) => {
   return (
     <StyledTimer>
       <TimerLabel id='timer-label'>{timerLabel}</TimerLabel>
-      <Time it='time-left'>{timeLeft.join(':')}</Time>
+      <Time id='time-left'>{timeLeft.join(':')}</Time>
       <Controls>
         <Button id='start_stop' onClick={() => setIsRun(!isRun)}>
           {isRun ? <FaPause /> : <FaPlay />}
