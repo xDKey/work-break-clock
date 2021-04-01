@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createGlobalStyle } from 'styled-components';
-import Electrolize from './assets/Electrolize.ttf';
-import AveriaBold from './assets/AveriaSerifLibre-Bold.ttf';
-import App from './components/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createGlobalStyle } from 'styled-components'
+import Electrolize from './assets/Electrolize.ttf'
+import AveriaBold from './assets/AveriaSerifLibre-Bold.ttf'
+import App from './components/App'
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Averia';
   src: url(${AveriaBold});
 }
-`;
+`
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,4 +22,4 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
