@@ -18,3 +18,4 @@ import './commands'
 import '@cypress/react/support'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import 'cypress-react-selector'

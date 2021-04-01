@@ -1,5 +1,10 @@
 {
   "experimentalComponentTesting": true,
   "componentFolder": "src",
-  "testFiles": "**/*spec.js"
+  "testFiles": "**/*spec.js",
+  "env": {
+    "cypress-react-selector": {
+      "root": "#cypress-root"
+    }
+  }
 }
