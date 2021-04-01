@@ -37,8 +37,14 @@ const Controls = styled.div`
 
 const Control = ({ controlType, time, handleSetTime }) => {
   const handleClick = ({ type }) => {
-    if (type === 'INC') handleSetTime(time + 1)
-    if (type === 'DEC') handleSetTime(time - 1)
+    if (type === 'INC') {
+      if (time === 60) return;
+      handleSetTime(time + 1);
+    }
+    if (type === 'DEC') {
+      if (time === 1) return;
+      handleSetTime(time - 1);
+    }
   };
 
   return (
