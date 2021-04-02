@@ -56,7 +56,6 @@ const App = () => {
   useEffect(() => {
     if (isBreak) setCurrentTime(breakTime + ':00')
     if (!isBreak) setCurrentTime(workTime + ':00')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBreak, workTime])
 
   return (
