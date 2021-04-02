@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import Timer from './Timer';
-import backgroundImage from '../assets/main-background.jpg';
-import Control from './Control';
-import { useEffect, useState } from 'react';
+import styled from 'styled-components'
+import Timer from './Timer'
+import backgroundImage from '../assets/main-background.jpg'
+import Control from './Control'
+import { useEffect, useState } from 'react'
 
 const Title = styled.div`
   font-family: Averia;
   font-size: 2rem;
   margin-top: 10px;
-`;
+`
 
 const BackgroundTimer = styled.main`
   display: flex;
@@ -24,14 +24,14 @@ const BackgroundTimer = styled.main`
   background-repeat: no-repeat;
   border-radius: 7%;
   box-shadow: 5px 5px 15px black;
-`;
+`
 
 const TimerWrapper = styled.div`
   height: 160px;
   width: 280px;
   margin-top: 10px;
   z-index: 1;
-`;
+`
 
 const ControlWrapper = styled.div`
   width: 300px;
@@ -39,25 +39,24 @@ const ControlWrapper = styled.div`
   justify-content: space-between;
   position: relative;
   top: -30px;
-`;
+`
 
 const App = () => {
-  const [breakTime, setBreakTime] = useState(5);
-  const [workTime, setWorkTime] = useState(25);
-  const [isBreak, setIsBreak] = useState(false);
-  const [currentTime, setCurrentTime] = useState(`${workTime}:00`);
+  const [breakTime, setBreakTime] = useState(5)
+  const [workTime, setWorkTime] = useState(25)
+  const [isBreak, setIsBreak] = useState(false)
+  const [currentTime, setCurrentTime] = useState(`${workTime}:00`)
 
   const clearAll = () => {
-    setIsBreak(false);
-    setBreakTime(5);
-    setWorkTime(25);
-  };
+    setIsBreak(false)
+    setBreakTime(5)
+    setWorkTime(25)
+  }
 
   useEffect(() => {
-    if (isBreak) setCurrentTime(breakTime + ':00');
-    if (!isBreak) setCurrentTime(workTime + ':00');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isBreak, workTime]);
+    if (isBreak) setCurrentTime(breakTime + ':00')
+    if (!isBreak) setCurrentTime(workTime + ':00')
+  }, [isBreak, workTime])
 
   return (
     <BackgroundTimer>
@@ -84,7 +83,7 @@ const App = () => {
         />
       </ControlWrapper>
     </BackgroundTimer>
-  );
-};
+  )
+}
 
-export default App;
+export default App

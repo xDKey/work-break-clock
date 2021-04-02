@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledButton = styled.button`
   padding: 10px;
@@ -8,14 +8,14 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 100%;
   box-shadow: 1px 1px 2px black;
-`;
+`
 
-const Button = ({id, children, onClick}) => {
-    return (
-        <StyledButton id={id} onClick={onClick}>
-            {children}
-        </StyledButton>
-    )
+const Button = ({ id, children, onClick }) => {
+  return (
+    <StyledButton id={id} onClick={onClick}>
+      {children}
+    </StyledButton>
+  )
 }
 
-export default Button;
+export default Button
