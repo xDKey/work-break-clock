@@ -1,4 +1,4 @@
-describe('Integration tests: ', () => {
+describe('Integration tests:', () => {
   before(() => cy.visit('/'))
   afterEach(() => cy.get('#reset').click())
 
