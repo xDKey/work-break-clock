@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/work-break-clock/static/js/main.b8303bec.chunk.js",
+    "main.js.map": "/work-break-clock/static/js/main.b8303bec.chunk.js.map",
+    "runtime-main.js": "/work-break-clock/static/js/runtime-main.de1afa90.js",
+    "runtime-main.js.map": "/work-break-clock/static/js/runtime-main.de1afa90.js.map",
+    "static/js/2.fedd8d08.chunk.js": "/work-break-clock/static/js/2.fedd8d08.chunk.js",
+    "static/js/2.fedd8d08.chunk.js.map": "/work-break-clock/static/js/2.fedd8d08.chunk.js.map",
+    "index.html": "/work-break-clock/index.html",
+    "static/js/2.fedd8d08.chunk.js.LICENSE.txt": "/work-break-clock/static/js/2.fedd8d08.chunk.js.LICENSE.txt",
+    "static/media/AveriaSerifLibre-Bold.fc1ba5ea.ttf": "/work-break-clock/static/media/AveriaSerifLibre-Bold.fc1ba5ea.ttf",
+    "static/media/Electrolize.3eb1b458.ttf": "/work-break-clock/static/media/Electrolize.3eb1b458.ttf",
+    "static/media/beep.77fbd8f5.mp3": "/work-break-clock/static/media/beep.77fbd8f5.mp3",
+    "static/media/main-background.0b36cbc7.jpg": "/work-break-clock/static/media/main-background.0b36cbc7.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de1afa90.js",
+    "static/js/2.fedd8d08.chunk.js",
+    "static/js/main.b8303bec.chunk.js"
+  ]
+}
